@@ -1,0 +1,116 @@
+version: '3.1'
+intents:
+- affirm
+- ask_business_type
+- ask_contact_us
+- ask_location
+- ask_product_services
+- bot_challenge
+- deny
+- goodbye
+- greet
+- inform
+- mood_great
+- mood_happy
+- mood_unhappy
+- out_of_scope
+- thankyou
+slots:
+  email:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: email
+  name:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: name
+  address:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: address
+  number:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: number
+  age:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: age
+entities:
+- email
+- age
+- name
+- address
+- number
+responses:
+  utter_greet:
+  - text: Hey! I am your friendly Takealot assistant! I can help you with some information of our company and what we offer. Further, you can create an account in a few easy steps with my help. Would you like to create an account now?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_location_info:
+  - text: Our Central Office is 12th Floor, 10 Rua Vasco Da Gama Plain, Foreshore, Cape Town, 8001. [View in Google Maps](https://www.google.com/maps/place/Takealot+Central+Office/@-33.9184311,18.4284028,15z/data=!4m6!3m5!1s0x1dcc5d88dddb4bfd:0xf34157712fde5e18!8m2!3d-33.9184311!4d18.4284028!16s%2Fg%2F11b5ys2cy3)
+  utter_business_type_info:
+  - text: 'Today, takealot.com is the leading ecommerce retailer in South Africa and one of the largest, most innovative ecommerce retailers on the African continent. The business was initiated with a simple vision in mind: To be the largest, simplest, most customer-centric online shopping destination in Africa.'
+  utter_product_service_info:
+  - text: 'We a popular online retailer in South Africa that offers a wide range of products across various categories. Here are some of the product categories you can find on our website:  Electronics: This category includes items such as smartphones, laptops, TVs, cameras, audio equipment, gaming consoles, and accessories.  Home & Kitchen: Here, you can find appliances, furniture, home decor, kitchenware, bedding, and other household items.  Baby & Toddler: This category offers products for infants and young children, including baby gear, toys, clothing, nursery furniture, and feeding essentials.  Beauty, Health & Wellness: We provide a selection of skincare, haircare, makeup, personal care products, vitamins, supplements, fitness equipment, and health-related items.  Fashion: You can explore a variety of clothing, shoes, bags, accessories, and fashion brands for men, women, and children.  Books, Movies & TV Series: We offer a wide range of books, eBooks, movies, TV series, music, and related media in various formats.  Sports, Outdoor & Travel: This category covers sports equipment, outdoor gear, camping supplies, luggage, travel accessories, and fitness products.  Toys & Games: Here, you can find toys, games, puzzles, board games, action figures, and educational items for children of all ages.  Automotive: We provide automotive accessories, car care products, tools, and equipment.  DIY, Tools & Home Improvement: This category includes tools, hardware, power equipment, DIY supplies, and home improvement products.  Please note that this list is not exhaustive, and We offer many more product categories and subcategories. You can visit our website or app to explore our complete range of products.'
+  utter_contact_us_info:
+  - text: Please visit our [Contact Us](https://www.takealot.com/about/contact-us) page for detailed information on how to contact us.
+  utter_ask_age:
+  - text: What is your age? Note you must be over 18 to create an account.
+  utter_ask_name:
+  - text: Can you please provide your Fullname, including your Firstname and Lastname?
+  utter_ask_address:
+  - text: Can you please provide your delivery address for us to dispatch your awesome purchases to?
+  utter_ask_number:
+  - text: Please provide your contact number so that we can contact you for deliveries (format e.g. +27 82 123 4456).
+  utter_ask_email:
+  - text: Can you please provide your preferred email address to create this account. This also allow us to provide updates and communications on your purchases and delivery thereof?
+  utter_slots_values:
+  - text: |2-
+       Here's the captured information you provided: 
+       - Age: {age} 
+       - Fullname: {name} 
+       - Address: {address} 
+       - Contact number: {number} 
+       - Email address: {email} 
+       NB: We will use this information to create your account and provide you an update via email when completed.
+  utter_no_problem:
+  - text: No problem :) - Your email of account creation status will be finalized shortly.
+  utter_ask_continue:
+  - text: Sorry, I don't quite understand. Do you want to continue?
+forms:
+  create_account_form:
+    required_slots:
+    - age
+    - name
+    - email
+    - address
+    - number
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_happy
+- utter_greet
+- utter_product_service_info
+- utter_location_info
+- utter_cheer_up
+- utter_contact_us_info
+- utter_business_type_info
+- utter_no_problem
+- utter_slots_values
+- utter_goodbye

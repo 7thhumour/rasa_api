@@ -1,0 +1,206 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin.
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: thankyou
+  examples: |
+    - thank you
+    - great thanks
+    - thank you so much
+    - thank you bye
+    - thank you, keep well
+    - thnak you
+    - thanks
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - that's right
+    - cool
+    - you bet
+    - I sure did
+    - more or less
+    - fine
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
+- intent: inform
+  examples: |
+    - my email address is [example@gmail.com](email)
+    - [user@gmail.com](email) is my email
+    - a primary email address of mine is [myname@gmail.com](email)
+    - my name is [ridewaan hanslo](name)
+    - [Ridewaan hanslo](name)
+    - my fullname is [Ridewaan Hanslo](name)
+    - firstname: [john](name) lastname: [doe](name)
+    - my address is [123 main street Brummeria 0184 Pretoria South Africa](address)
+    - the street address at which i reside is [123 main street Brummeria Pretoria South Africa](address)
+    - [123 main street Brummeria 0184 Pretoria South Africa](address)
+    - my contact number is [+27 78 234 9870](number)
+    - [+27 60 123 6879](number)
+    - my telephone number is [+27601236879](number)
+    - my age is [18](age)
+    - i am [25](age) years old
+    - [65](age)
+    - [ridewaan@gmail.com](email)
+    - [Ridewaan Hanslo]{"entity": "name", "value": "ridewaan hanslo"}
+    - [123 crazy street brummeria pretoria](address)
+    - [+27781839943](number)
+    - [39](age)
+    - [ridewaan hanslo](name)
+    - [123 main street brummeria pretoria](address)
+    - [+7818312341](number)
+- intent: out_of_scope
+  examples: |
+    - wait stop
+    - you are no help
+    - that is not what I said
+    - what is the time
+    - what is the weather
+    - how do you compare to chatGPT
+    - can you help me with shopping
+    - why are you broken
+    - this is not working for me
+    - stop asking
+    - none of your business
+    - I prefer not to answer
+    - that does not make sense
+    - nevermind
+    - I changed my mind
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - im sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_location
+  examples: |
+    - where are you located?
+    - what is your address?
+    - what is your business address?
+    - where is the business located?
+    - where is your business?
+    - business location?
+    - location?
+    - wher is your business located
+    - what is your location
+- intent: ask_business_type
+  examples: |
+    - what type of business are you?
+    - what kind of business is this?
+    - what do your business specialise in?
+    - what do your business specialize with?
+    - business type?
+    - what is the focus of the business?
+    - business focus?
+    - what type of business are you
+- intent: ask_product_services
+  examples: |
+    - what services or products do you offer?
+    - what services or products does your business offer?
+    - products offered?
+    - services offered?
+    - offered products and services?
+    - what products and services do you offer?
+- intent: ask_contact_us
+  examples: |
+    - how can i contact or reach you?
+    - what are your contact details?
+    - what are your contact information?
+    - your contact information?
+    - what is your email address?
+    - what is your telephone number?
+    - what is your cellphone number?
+    - how can we reach you
+    - how can we contact you?
+    - how can we reach you?
+- intent: mood_happy
+  examples: |
+    - I am feeling great
+    - I love my life
+    - I am feeling awesome
+    - good to be alive
+    - I am happy
+    - Im happy
+    - im happy
+- synonym: ridewaan hanslo
+  examples: |
+    - Ridewaan Hanslo
